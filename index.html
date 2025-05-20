@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monitor Craft</title>
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Styles CSS customizados -->
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/theme.css">
+  <link rel="stylesheet" href="styles/scroll.css">
+</head>
+<body style="background:#F5F6FA;">
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/index.html">
+        <img src="assets/logoMonitorCraft.png" alt="Logo" width="100%" height="100%" class="me-2 logo">
+        <span class="fw-bold fs-4">HTML Graphics Generator</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="/index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/faq/home.faq.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="/others/contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="form-check form-switch ms-3">
+      <input class="form-check-input" type="checkbox" id="toggle-theme">
+      <label class="form-check-label" for="toggle-theme">
+        Dark mode
+      </label>
+      </div>
+    </div>
+  </nav>
+  <!-- Fim: Header -->
+
+  <!-- Conteúdo Principal -->
+  <div class="container pb-5">
+    <div class="row g-4">
+      <!-- Formulário de configuração do Card (Parte Esquerda) -->
+      <div class="col-lg-6">
+        <form id="card-config-form" autocomplete="off">
+          <!-- Título do Card -->
+          <div class="card mb-3 p-3" id="titleDarkMode">
+            <h6 class="fw-bold mb-2">Título:</h6>
+            <div class="d-flex gap-2 mb-2">
+              <input type="text" id="titulo-card" class="form-control fade-toggle show" placeholder="Título do Card" maxlength="30">
+              <input type="color" id="cor-titulo" value="#000000" title="Cor do Título">
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="posTitulo" id="tituloEsquerda" value="left" checked>
+              <label class="form-check-label" for="tituloEsquerda">Esquerda</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="posTitulo" id="tituloDireita" value="right">
+              <label class="form-check-label" for="tituloDireita">Direita</label>
+            </div>
+          </div>
+          <!-- Fim: Título do Card -->
+
+          <!-- Ícones -->
+          <div class="card mb-3 p-3 fade-toggle show">
+            <h6 class="fw-bold mb-2">Ícone:</h6>
+            <div class="d-flex align-items-center gap-2">
+              <button type="button" class="btn btn-light" id="prev-icon">&lt;</button>
+              <div class="d-flex flex-row gap-2" id="icones-galeria">
+                <!-- Ícones serão carregados via JS -->
+              </div>
+              <button type="button" class="btn btn-light" id="next-icon">&gt;</button>
+            </div>
+          </div>
+          <!-- Fim: Ícones -->
+
+          <!-- Tipo de Valor -->
+          <div class="card mb-3 p-3">
+            <h6 class="fw-bold mb-2">Value Type:</h6>
+            <div class="d-flex flex-wrap gap-3">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipoValor" id="valorPorcentagem" value="percent" checked>
+                <label class="form-check-label" for="valorPorcentagem">(%) Porcentagem</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipoValor" id="valorBytes" value="bytes">
+                <label class="form-check-label" for="valorBytes">B, MB, GB, TB</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipoValor" id="valorUptime" value="uptime">
+                <label class="form-check-label" for="valorUptime">Uptime</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipoValor" id="valorInteiro" value="integer">
+                <label class="form-check-label" for="valorInteiro">Numérico Inteiro</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipoValor" id="valorFloat" value="float">
+                <label class="form-check-label" for="valorFloat">Float</label>
+              </div>
+            </div>
+          </div>
+          <!-- Fim: Tipo de Valor -->
+
+          <!-- Cor do Card -->
+          <div class="card mb-3 p-3">
+            <h6 class="fw-bold mb-2">Cor do Card:</h6>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="tipoBg" id="bgSimples" value="simple" checked>
+              <label class="form-check-label" for="bgSimples">Background</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="tipoBg" id="bgGradiente" value="gradient">
+              <label class="form-check-label" for="bgGradiente">Gradiente</label>
+            </div>
+            <div id="cores-background" class="mt-2">
+              <label class="form-label" for="cor1">Cor 1</label>
+              <input type="color" id="cor1" value="#57C785">
+            </div>
+            <div id="cores-gradiente" class="mt-2" style="display: none;">
+              <label class="form-label" for="cor-grad1">Cor 1</label>
+              <input type="color" id="cor-grad1" value="#57C785">
+              <label class="form-label ms-2" for="cor-grad2">Cor 2</label>
+              <input type="color" id="cor-grad2" value="#EDDD53">
+              <label class="form-label ms-2" for="rotacao">Rotação (deg)</label>
+              <input type="number" id="rotacao" min="0" max="360" value="90" style="width: 70px;">
+            </div>
+          </div>
+          <!-- Fim: Cor do Card -->
+
+          <!-- Trigger -->
+          <div class="card mb-3 p-3">
+            <h6 class="fw-bold mb-2">Trigger:</h6>
+
+            <!-- Switch Ativar/Desativar Trigger -->
+            <div class="form-check form-switch mb-3">
+              <label class="form-check-label" for="toggle-trigger">
+                Ativar Trigger
+              </label>
+              <input class="form-check-input" type="checkbox" id="toggle-trigger">
+            </div>
+            <!-- Fim: Switch Ativar/Desativar Trigger -->
+
+            <!-- Bloco de Opções da Trigger -->
+            <div id="trigger-config-bloco" style="display:none;">
+              <div class="d-flex flex-row gap-2 align-items-center mb-2">
+                <span>Se valor:</span>
+                <select class="form-select w-auto" id="trigger-compare">
+                  <option value="eq">Igual</option>
+                  <option value="gte">Maior Igual</option>
+                  <option value="lte">Menor Igual</option>
+                  <option value="neq">Diferente de</option>
+                </select>
+                <input type="number" class="form-control w-auto" id="trigger-value" value="60" style="max-width:100px;">
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="tipoTriggerBg" id="triggerBgSimples" value="simple" checked>
+                <label class="form-check-label" for="triggerBgSimples">Background</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="tipoTriggerBg" id="triggerBgGradiente" value="gradient">
+                <label class="form-check-label" for="triggerBgGradiente">Gradiente</label>
+              </div>
+              <div id="trigger-cores-background" class="mt-2 fade-toggle show">
+                <label class="form-label" for="trigger-cor1">Cor 1</label>
+                <input type="color" id="trigger-cor1" value="#FF4444">
+              </div>
+              <div id="trigger-cores-gradiente" class="mt-2 fade-toggle">
+                <label class="form-label" for="trigger-cor-grad1">Cor 1</label>
+                <input type="color" id="trigger-cor-grad1" value="#FF4444">
+                <label class="form-label ms-2" for="trigger-cor-grad2">Cor 2</label>
+                <input type="color" id="trigger-cor-grad2" value="#FFD6D6">
+                <label class="form-label ms-2" for="trigger-rotacao">Rotação (deg)</label>
+                <input type="number" id="trigger-rotacao" min="0" max="360" value="90" style="width: 70px;">
+              </div>
+            </div>
+            <!-- Fim: Bloco de Opções da Trigger -->
+          </div> 
+          <!-- Fim: Trigger -->
+        </form>
+      </div>
+      <!-- Fim: Formulário de configuração do Card (Parte Esquerda) -->
+
+      <!-- Visualização do Card e Códigos (Parte Direita) -->
+      <div class="col-lg-6">
+        <div class="card p-3 mb-3" id="visualizacaoCardDarkmode">
+          <h6 class="fw-bold mb-2">Pré-visualização do Card</h6>
+          <div id="preview-area" class="p-3">
+            <!-- Card dinâmico gerado via JS -->
+          </div>
+          <button class="btn btn-primary mt-3 w-100" id="btn-gerar-codigo">GERAR CÓDIGO FONTE</button>
+        </div>
+
+        <div class="card p-3">
+          <h6 class="fw-bold mb-2">Código:</h6>
+
+          <!-- Nav Tables -->
+          <ul class="nav nav-tabs mb-2" id="codeTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="tab-html" data-bs-toggle="tab" data-bs-target="#tab-pane-html" type="button" role="tab" aria-controls="tab-pane-html" aria-selected="true">HTML</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="tab-css" data-bs-toggle="tab" data-bs-target="#tab-pane-css" type="button" role="tab" aria-controls="tab-pane-css" aria-selected="false">CSS</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="tab-js" data-bs-toggle="tab" data-bs-target="#tab-pane-js" type="button" role="tab" aria-controls="tab-pane-js" aria-selected="false">JavaScript</button>
+            </li>
+          </ul>
+          <!-- Fim: Nav Tables -->
+
+          <!-- Table Panes -->
+          <div class="tab-content" id="codeTabsContent">
+            <div class="tab-pane fade show active" id="tab-pane-html" role="tabpanel" aria-labelledby="tab-html">
+              <textarea id="code-html" class="form-control code-block mb-2" rows="9" readonly></textarea>
+              <button class="btn btn-dark w-100 mb-2" onclick="copiarCodigo('html')">Copiar HTML</button>
+            </div>
+            <div class="tab-pane fade" id="tab-pane-css" role="tabpanel" aria-labelledby="tab-css">
+              <textarea id="code-css" class="form-control code-block mb-2" rows="9" readonly></textarea>
+              <button class="btn btn-dark w-100 mb-2" onclick="copiarCodigo('css')">Copiar CSS</button>
+            </div>
+            <div class="tab-pane fade" id="tab-pane-js" role="tabpanel" aria-labelledby="tab-js">
+              <textarea id="code-js" class="form-control code-block mb-2" rows="9" readonly></textarea>
+              <button class="btn btn-dark w-100 mb-2" onclick="copiarCodigo('js')">Copiar JavaScript</button>
+            </div>
+          </div>
+          <div class="alert" role="alert">
+          Saiba <a href="/faq/faqs/monitor-craft-faq-01.html" class="alert-link" target="_blank">como</a> utilizar os cards gerados pelo Monitor Craft em seu painel Grafana.
+          </div>
+        </div>
+        <!-- Fim: Table Panes -->
+         
+      </div>
+      <!-- Fim: Visualização do Card e Códigos (Parte Direita) -->
+    </div>
+  </div>
+  <!-- Fim: Conteúdo Principal -->
+
+  <!--Footer (Rodapé)-->
+  <footer class="py-4 mt-5 bg-white border-top shadow-sm">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <img src="/assets/logoMonitorCraft.png" width="50" class="me-2" alt="Logo" />
+        <span class="mb-0 text-muted">&copy; 2025 Monitor Craft - V1.1</span>
+      </div>
+      <ul class="nav">
+        <li class="ms-3">
+          <a class="text-muted fs-4" href="https://www.linkedin.com/in/mathews-domingos/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+  <!--Fim: Footer (Rodapé)-->
+
+  <!-- Bootstrap CDN JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Scripts -->
+  <script src="scripts/main.js"></script>
+  <script src="/assets/icons/icons.js"></script>
+  <script src="scripts/theme.js"></script>
+  <script src="scripts/scroll-image.js"></script>
+  <script src="scripts/updatePreview.js"></script>
+</body>
+</html>

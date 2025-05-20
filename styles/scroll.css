@@ -1,0 +1,20 @@
+/* Scroll Principal */
+body::-webkit-scrollbar {
+  width: 7px;              
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(95, 95, 95);        
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #57C785;    
+  border-radius: 12px;        
+}
+/* Fim: Scroll Principal */
+
+/* Bloco de Código */
+.code-block::-webkit-scrollbar {
+  width: 5px;              
+}
+/* Fim: Bloco de Código */
