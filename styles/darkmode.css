@@ -1,0 +1,196 @@
+/* ======================================================= */
+/* =============== MONITOR CRAFT DARK MODE =============== */
+/* ======================================================= */
+
+/* Body Theme Dark */
+body.dark-mode {
+  background: #212529;
+  color: #e4e8ef !important;
+}
+
+/* Card do Preview */
+body.dark-mode .card {
+  background: #5a80a5;
+  color: #f2f2f2 !important;
+  border-color: #1d2535 !important;
+}
+
+/* Accordion */
+body.dark-mode .accordion-button::after {
+  filter: brightness(0) invert(1);
+}
+body.dark-mode .accordion-button:not(.collapsed)::after {
+  filter: none;
+  /* Cor do Título do Header do Accordion */
+  color: #57C785!important;
+}
+
+/* Accordion e Cards */
+body.dark-mode .accordion-item,
+body.dark-mode .card,
+body.dark-mode .rounded-4,
+body.dark-mode .border {
+  background: #2b3035;
+  color: #e4e8ef !important;
+  border: solid #495057 0.50px !important;
+  border-radius: 15px;
+  box-shadow: none!important;
+}
+
+/* Accordion-header */
+body.dark-mode .accordion-button {
+  background: #2b3035 !important;
+  color: #e4e8ef !important;
+  box-shadow: none!important;
+}
+body.dark-mode .accordion-button:not(.collapsed) {
+  color: #57C785 !important;
+  background: #494949 !important; /*Header Aberto*/
+  box-shadow: none!important;
+}
+body.dark-mode .accordion-body {
+  background: transparent !important;
+  color: #e4e8ef !important;
+  box-shadow: none!important;
+}
+body.dark-mode button.accordion-button.rounded-4::after {
+  color: #e4e8ef !important;
+  box-shadow: none!important;
+}
+
+/* Span > Footer */
+body.dark-mode footer span {
+  color: #e4e8ef !important;
+}
+
+/* Formulários */
+body.dark-mode .form-control,
+body.dark-mode textarea,
+body.dark-mode select,
+body.dark-mode input[type="text"],
+body.dark-mode input[type="color"] {
+  background: #404040 !important; /*Place Holder Dentro do Acordeon*/
+  color: #e4e8ef !important;
+  border-color: #636363 !important;
+  box-shadow: none!important;
+} 
+body.dark-mode input[type="color"] {
+  border-radius: 4px !important;
+  background: #404040 !important;
+}
+
+/* Placeholder do input (título etc) */
+body.dark-mode ::placeholder {
+  color: #b2b8c5 !important;
+  opacity: 1 !important;
+}
+
+/* Tabs de código */
+body.dark-mode .nav-tabs {
+  border-bottom: 1px solid #63636300 !important; /* Borda de baixo das tabs de código (transparente)*/
+}
+body.dark-mode .nav-tabs .nav-link {
+  background: #494949 !important; /* Copiar cod NÂO Selecionado */
+  color: #e4e8ef !important;
+}
+body.dark-mode .nav-tabs .nav-link.active {
+  background: #212529 !important; /* Copiar cod Selecionado */
+  color: #7f38fb !important;
+}
+/* Cor dos links - Copiar Código */
+body.dark-mode #codeTabs .nav-link {
+  color: #e4e8ef!important;
+}
+/* Cor dos links - Selecionado */
+body.dark-mode #codeTabs .nav-link.active {
+  color: #6506ec!important;
+}
+
+/* Cads dos Códigos */
+body.dark-mode .nav-tabs .nav-link {
+  margin-bottom: 0 !important;
+  border: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+/* Textarea dos códigos */
+body.dark-mode .code-block,
+body.dark-mode textarea.form-control {
+  background: #212529 !important;
+  color: #d8e3f5 !important;
+  border: solid #495057 0.50px !important;
+}
+
+/* Botões */
+body.dark-mode .btn-dark,
+body.dark-mode .btn-primary {
+  border: none !important;
+  background: linear-gradient(to right, #7f38fb, #6200ea);
+}
+body.dark-mode .btn-dark:active,
+body.dark-mode .btn-dark:focus,
+body.dark-mode .btn-dark:hover,
+body.dark-mode .btn-primary:active,
+body.dark-mode .btn-primary:focus,
+body.dark-mode .btn-primary:hover {
+  background: linear-gradient(to right, #6200ea, #7f38fb,) !important;
+  color: #fff !important;
+}
+
+/* Footer */
+body.dark-mode footer,
+body.dark-mode .footer {
+  background: linear-gradient(to right, #7f38fb, #6200ea);
+  color: #b2b8c5 !important;
+  border-top: 0.50px solid #49505780 !important;
+} body.dark-mode .footer-link:hover {
+    color: #212529;
+}
+
+/* Alert */
+body.dark-mode .alert {
+  background: #212529 !important;
+  color: rgb(184, 184, 184) !important;
+}
+
+/* Preview do Card (mantém cor real do card) */
+body.dark-mode #preview-area .card {
+  color: #e4e8ef !important;
+  border-color: #636363 !important;
+  box-shadow: none !important;
+}
+
+/* Icon Title */
+body.dark-mode .icon-title {
+  color: #fff;
+}
+
+/* Faq.home Descrição */
+body.dark-mode .text-muted {
+  color: #fff!important;
+}
+
+/* navbar-toggler */
+body.dark-mode .navbar-toggler {
+  color: rgb(255 255 255);
+  background-color: rgb(184, 184, 184);
+} body.dark-mode nav img {
+  filter: grayscale(100%) brightness(0) invert(1);
+} body.dark-mode footer img {
+  filter: grayscale(100%) brightness(0) invert(1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

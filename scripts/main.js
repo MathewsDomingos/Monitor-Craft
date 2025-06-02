@@ -10,39 +10,24 @@ function renderIcons() {
   const gallery = document.getElementById('icones-galeria');
   gallery.innerHTML = '';
   icons.forEach((icon, idx) => {
+    const div = document.createElement('div');
+    div.className = 'icon-item';
+    if (idx === selectedIconIndex) div.classList.add('selected');
+
     const img = document.createElement('img');
     img.src = icon;
     img.alt = `Ícone ${idx + 1}`;
-    img.className = 'rounded border p-1 bg-white';
-    img.style.width = '40px';
-    img.style.cursor = 'pointer';
-    img.style.boxShadow = idx === selectedIconIndex ? '0 0 0 3px #57C785' : 'none';
-    if (idx === selectedIconIndex) img.classList.add('border-success', 'selected');
-    img.onclick = () => {
+
+    div.appendChild(img);
+
+    div.onclick = () => {
       selectedIconIndex = idx;
       renderIcons();
       updatePreview();
     };
-    gallery.appendChild(img);
-
-    // Scroll Automático Para o Ícone Selecionado
-    if (idx === selectedIconIndex) {
-      setTimeout(() => {
-        img.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-      }, 10);
-    }
+    gallery.appendChild(div);
   });
 }
-document.getElementById('prev-icon').onclick = function () {
-  selectedIconIndex = (selectedIconIndex - 1 + icons.length) % icons.length;
-  renderIcons();
-  updatePreview();
-};
-document.getElementById('next-icon').onclick = function () {
-  selectedIconIndex = (selectedIconIndex + 1) % icons.length;
-  renderIcons();
-  updatePreview();
-};
 
 // =========================================
 // CAMPOS DE COR/GRADIENTE DINÂMICOS

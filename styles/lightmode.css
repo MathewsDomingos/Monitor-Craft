@@ -1,0 +1,96 @@
+/* ======================================================= */
+/* =============== MONITOR CRAFT LIGHT MODE =============== */
+/* ======================================================= */
+
+html, body {
+  height: 100%;
+} body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #e8e8e8; /* Color Body */
+} footer {
+  flex-shrink: 0;
+} header {
+  box-shadow: 5px 5px 6px #7a7a7a70, -5px -5px 6px #6f6969 !important;
+} nav img {
+  filter: grayscale(100%) brightness(0) invert(1);
+}
+
+/* Botões */
+.btn-dark,
+.btn-primary {
+  border: none !important;
+  background: linear-gradient(to right, #7f38fb, #6200ea);
+}
+.btn-dark:active,
+.btn-dark:focus,
+.btn-dark:hover,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover {
+  background: #7f38fb !important;
+  color: #fff !important;
+} .form-select {
+  background: #f0f0f0;
+}
+
+/* Navbar Hover */
+.navbar .nav-link:hover { 
+  color: #000 !important;
+  font-weight: 400;
+} 
+
+/* Accordion */
+.accordion {
+  --bs-accordion-bg: #dbdbdb !important;
+} .accordion-item {
+  box-shadow: 2.5px 2.5px 5px #c5c5c5, -2.5px -2.5px 5px #ffffff00;
+} .accordion-button:not(.collapsed) {
+  background-color: #dcdcdc; /* Accordion Header Open*/
+}
+
+/* Navbar & Footer */
+.bg-white {
+  --bs-bg-opacity: 1;
+  background-color: #7d34fa !important;
+  border: 1px solid #00000040 !important;
+}
+
+/* Bloco de Código */
+.code-block {
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 15px;
+  background: #c9c9c9;
+  color: #182233;
+  border-radius: 6px;
+  border: 1px solid #e1e5ec;
+  resize: vertical;
+  min-height: 130px;
+  tab-size: 2;
+  white-space: pre;
+} .code-block {
+  background: #c9c9c9!important;
+} .nav-tabs .nav-link.active {
+  background-color: #c9c9c9;
+  border-color: transparent;
+  border-radius: 0px;
+} .nav-tabs .nav-link {
+  border-radius: 0;
+  background: #f0f0f0;
+} .form-control { 
+  background: #f0f0f0;
+}
+
+/* Pré-visualização do Card */
+.card {
+  background-color: #dbdbdb;
+  box-shadow: 2.5px 2.5px 5px #c5c5c5, -2.5px -2.5px 5px #ffffff00;
+  border: none;
+  border-radius: 15px;
+}.icon-title {
+  color: #111;
+  transition: color 0.2s;
+}#preview-area .card {
+  box-shadow: none!important;
+}

@@ -33,8 +33,8 @@
       <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="/others/vaquinha.html">Ajude a Evoluir</a></li>
-          <li class="nav-item"><a class="nav-link" href="/others/contato.html">Contato</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Ajude a Evoluir</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nav-footer">Contato</a></li>
           <li class="nav-item"><a class="nav-link" href="/faq/home.faq.html">Dúvidas Frequentes</a></li>
         </ul>
 
@@ -68,57 +68,68 @@
   </header>
   <!-- Fim: Header -->
 
+  <!-- Conteúdo Principal -->
   <div class="container my-5">
-  <h2 class="fw-bold mb-4">Contato</h2>
-  <div class="row g-4">
+  <h2 class="fw-bold mb-4">Como personalizar seu Grafana com cards do Monitor Craft</h2>
 
-    <!-- LinkedIn -->
-    <div class="col-md-4">
-      <div class="card h-100 rounded-4 shadow-sm border">
-        <div class="card-body d-flex align-items-center">
-          <i class="bi bi-linkedin fs-1 me-3 text-primary"></i>
-          <div>
-            <div class="fw-bold mb-1">LinkedIn</div>
-            <a href="https://www.linkedin.com/in/mathews-domingos/" target="_blank" class="text-decoration-none">
-              /in/mathews-domingos
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- Iframe -->
+  <div class="d-flex align-items-center justify-content-center mb-5">
+    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7330710622013206528?compact=1" height="399" width="100%" frameborder="0" allowfullscreen="" title="Publicação incorporada"></iframe>
+  </div> 
+  <!-- Fim: Iframe -->
 
-    <!-- E-mail -->
-    <div class="col-md-4">
-      <div class="card h-100 rounded-4 shadow-sm border">
-        <div class="card-body d-flex align-items-center">
-          <i class="bi bi-envelope fs-1 me-3 text-danger"></i>
-          <div>
-            <div class="fw-bold mb-1">E-mail</div>
-            <a href="mailto:monitorcraft1@gmail.com" class="text-decoration-none">
-              monitorcraft1@gmail.com
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- WhatsApp -->
-    <div class="col-md-4">
-      <div class="card h-100 rounded-4 shadow-sm border">
-        <div class="card-body d-flex align-items-center">
-          <i class="bi bi-whatsapp fs-1 me-3 text-success"></i>
-          <div>
-            <div class="fw-bold mb-1">WhatsApp</div>
-            <a href="https://wa.me/5516991585851" target="_blank" class="text-decoration-none">
-              +55 (16) 99158-5851
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    </div>
+  <!-- Passo a Passo -->
+  <h4 class="fw-bold mb-3">PASSO A PASSO</h4>
+    <ol class="mb-5" style="font-size:1.13rem;">
+      <li class="mb-2">
+        <strong>Verifique o plugin:</strong>
+        <br>
+        Confirme se o plugin <strong>HTML Graphics</strong> está instalado em seu Grafana.<br>
+        Caso não esteja, siga as instruções da documentação oficial do plugin.
+      </li>
+      <br>
+      <li class="mb-2">
+        <strong>Crie o painel:</strong>
+        <br>
+        No Grafana, adicione um novo painel e selecione <strong>HTML Graphics</strong> como tipo de visualização.
+      </li>
+      <br>
+      <li class="mb-2">
+        <strong>Ajuste a visualização:</strong>
+        <br>
+        No campo <strong>Overflow</strong>, selecione a opção <strong>Hidden</strong> para evitar barras de rolagem indesejadas.
+      </li>
+      <br>
+      <li class="mb-2">
+        <strong>Limpe o conteúdo padrão:</strong>
+        <br>
+        Apague todo o conteúdo padrão dos campos <strong>HTML/SVG document</strong>, <strong>CSS</strong> e <strong>onRender (JS)</strong> do plugin.
+      </li>
+      <br>
+      <li class="mb-2">
+        <strong>Copie o código do Monitor Craft:</strong>
+        <br>
+        No site Monitor Craft, gere e copie o código.
+      </li>
+      <br>
+      <li class="mb-2">
+        <strong>Cole cada trecho no campo correspondente do plugin:</strong>
+        <ul class="mb-1">
+          <li>HTML no campo <strong>HTML/SVG document</strong></li>
+          <li>CSS no campo <strong>CSS</strong></li>
+          <li>JavaScript no campo <strong>onRender</strong></li>
+        </ul>
+      </li>
+      <br>
+      <li>
+        <strong>Salve as alterações:</strong>
+        <br>
+        Clique em <strong>Apply</strong> (no canto superior direito) para salvar e visualizar o resultado.
+      </li>
+    </ol>
+    <!-- Fim: Passo a Passo -->
   </div>
+  <!-- Fim: Conteúdo Principal -->
 
   <!--Footer (Rodapé)-->
   <div id="footer-placeholder"></div>
