@@ -384,7 +384,7 @@ if (cardValue && valueField) {
 
   // Exibe Comentário de Assinatura em CSS e JS
   const comentarioAssinatura = `
-/* Obrigado por usar o HTML Graphics Generator
+/* Obrigado por usar o Monitor Craft
    Created By Mateus Domingos
    www.linkedin.com/in/mathews-domingos/
 */
